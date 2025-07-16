@@ -1,5 +1,69 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 body{
+    background: limegreen;
+    height: 100vh;
+}
+
+.card{
+    display: inline-block;
     background: white;
+    margin: auto;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    border-radius: 20px; 
+    position: relative; /*all the child elements  positions will be adjusted within/based on this containers positioning*/
+    padding: 10px;
+    text-align: center;
+    font-size: 150px;
+    padding-top: 75px;
+   
+    /*sets the displayed cards/content that will be switched*/
+    &:before{
+        /* content: '\2660'; \2660 = &spades; */
+         position: absolute;
+         top: 0px;
+         left: 20px; 
+         font-size: 75px;
+    }
+
+    &:after{
+         /* content: '\2660'; &spades; */
+         position: absolute; 
+         bottom: 0px;
+         right: 20px;
+          font-size: 75px;
+    }
+
+
+    &.spades:before, &.spades:after{content: '\2660';} /* &spades; */
+    &.clubs:before, &.clubs:after{content: '\2663'; }/* &clubs; */
+    &.hearts:before, &.hearts:after{content: '\2665'; color: hotpink}/* &hearts; */
+    &.hearts2:before, &.hearts2:after{content: '\2665'; color: black}/* &hearts; */
+    &.diamonds:before, &.diamonds:after{content: '\2666'; color: red}/* &diams; */
+    &.diamonds2:before, &.diamonds2:after{content: '\2666'; color: black}/* &diams; */
+
+   /* .suit-top{
+         position: absolute;
+         top: 0px;
+         left: 20px; 
+         font-size: 75px;
+    }
+
+    .suit-bttm{
+         position: absolute;
+         bottom: 0px;
+         right: 20px;
+          font-size: 75px;
+    }
+
+    .numberr{
+        font-size: 150px;
+        position: absolute;
+        top: 45%;  // Moves the top edge of the element to the vertical center *
+        left: 50%; // Moves the left edge of the element to the horizontal center *
+        transform: translate(-50%, -50%); /* Shifts the element back by half its width and height, centering it perfectly *
+    } 
+    */
 }
